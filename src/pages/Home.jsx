@@ -4,6 +4,7 @@ import Heart from "../assets/Heart.mp3";
 import { HomeInfo, Loader } from "../components";
 import { soundoff, soundon } from "../assets/icons";
 import { Bird, Island, Plane, Sky } from "../models";
+import { Mailbox } from "../models/Mailbox";
 
 const Home = () => {
   const audioRef = useRef(new Audio(Heart));
@@ -39,21 +40,38 @@ const Home = () => {
     return [screenScale, screenPosition];
   };
 
+  const adjustMailboxForScreenSize = () => {
+    let screenScale, screenPosition;
+
+    // If screen width is less than 768px, adjust the scale and position
+    if (window.innerWidth < 768) {
+      screenScale = [1.5, 1.5, 1.5];
+      screenPosition = [0, -1.5, 0];
+    } else {
+      screenScale = [0.1, 0.1, 0.1];
+      screenPosition = [0, -4, -4];
+    }
+
+    return [screenScale, screenPosition];
+  };
+
+
   const adjustIslandForScreenSize = () => {
     let screenScale, screenPosition;
 
     if (window.innerWidth < 768) {
-      screenScale = [0.9, 0.9, 0.9];
+      screenScale = [0.009, 0.009, 0.009];
       screenPosition = [0, -6.5, -43.4];
     } else {
-      screenScale = [1, 1, 1];
-      screenPosition = [0, -6.5, -43.4];
+      screenScale = [0.01, 0.01, 0.01];
+      screenPosition = [1, -9.5, -42.4];
     }
 
     return [screenScale, screenPosition];
   };
 
   const [biplaneScale, biplanePosition] = adjustBiplaneForScreenSize();
+  const [mailboxScale, mailboxPosition] = adjustMailboxForScreenSize();
   const [islandScale, islandPosition] = adjustIslandForScreenSize();
 
   return (
@@ -86,6 +104,7 @@ const Home = () => {
 
           <Bird />
           <Sky isRotating={isRotating} />
+          
           <Island
             isRotating={isRotating}
             setIsRotating={setIsRotating}

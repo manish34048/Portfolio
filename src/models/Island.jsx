@@ -1,20 +1,9 @@
-/**
- * IMPORTANT: Loading glTF models into a Three.js scene is a lot of work.
- * Before we can configure or animate our model’s meshes, we need to iterate through
- * each part of our model’s meshes and save them separately.
- *
- * But luckily there is an app that turns gltf or glb files into jsx components
- * For this model, visit https://gltf.pmnd.rs/
- * And get the code. And then add the rest of the things.
- * YOU DON'T HAVE TO WRITE EVERYTHING FROM SCRATCH
- */
-
 import { a } from "@react-spring/three";
 import { useEffect, useRef } from "react";
 import { useGLTF } from "@react-three/drei";
 import { useFrame, useThree } from "@react-three/fiber";
 
-import islandScene from "../assets/3d/island.glb";
+import islandScene from "../assets/3d/island1.glb";
 
 export function Island({
   isRotating,
@@ -178,33 +167,123 @@ export function Island({
   return (
     // {Island 3D model from: https://sketchfab.com/3d-models/foxs-islands-163b68e09fcc47618450150be7785907}
     <a.group ref={islandRef} {...props}>
+
       <mesh
-        geometry={nodes.polySurface944_tree_body_0.geometry}
-        material={materials.PaletteMaterial001}
+        castShadow
+        receiveShadow
+        geometry={nodes.Cube001_Material005_0.geometry}
+        material={materials["Material.005"]}
+        position={[92.088, -1359.733, -1022.194]}
+        rotation={[0, 1.387, 0]}
+        scale={183.02}
       />
       <mesh
-        geometry={nodes.polySurface945_tree1_0.geometry}
-        material={materials.PaletteMaterial001}
+        castShadow
+        receiveShadow
+        geometry={nodes.Cube002_Material004_0.geometry}
+        material={materials["Material.004"]}
+        position={[92.088, -1359.733, -1022.194]}
+        rotation={[0, 1.387, 0]}
+        scale={183.02}
       />
       <mesh
-        geometry={nodes.polySurface946_tree2_0.geometry}
-        material={materials.PaletteMaterial001}
+        castShadow
+        receiveShadow
+        geometry={nodes.Cube_Material007_0.geometry}
+        material={materials["Material.007"]}
+        position={[-1220.449, 322.205, -117.979]}
+        rotation={[-Math.PI / 2, 0, 2.409]}
+        scale={[1154.002, 1154.002, 351.421]}
       />
       <mesh
-        geometry={nodes.polySurface947_tree1_0.geometry}
-        material={materials.PaletteMaterial001}
+        castShadow
+        receiveShadow
+        geometry={nodes.Object001_Object001_mtl_0.geometry}
+        material={materials.Object001_mtl}
+        position={[-824.066, 680.058, -1303.098]}
+        rotation={[-1.59, -0.01, -0.665]}
+        scale={0.864}
       />
       <mesh
-        geometry={nodes.polySurface948_tree_body_0.geometry}
-        material={materials.PaletteMaterial001}
+        castShadow
+        receiveShadow
+        geometry={nodes.Object001001_Object001_mtl_0.geometry}
+        material={materials.Object001_mtl}
+        position={[369.024, 680.058, -140.581]}
+        rotation={[-Math.PI / 2, -0.022, 0.429]}
+        scale={0.864}
       />
       <mesh
-        geometry={nodes.polySurface949_tree_body_0.geometry}
-        material={materials.PaletteMaterial001}
+        castShadow
+        receiveShadow
+        geometry={nodes.Object001002_Object001_mtl_0.geometry}
+        material={materials.Object001_mtl}
+        position={[369.024, 680.058, -140.581]}
+        rotation={[-Math.PI / 2, -0.022, 0.429]}
+        scale={0.864}
       />
       <mesh
-        geometry={nodes.pCube11_rocks1_0.geometry}
-        material={materials.PaletteMaterial001}
+        castShadow
+        receiveShadow
+        geometry={nodes.Object001003_Object001_mtl_0.geometry}
+        material={materials.Object001_mtl}
+        position={[369.024, 680.058, -140.581]}
+        rotation={[-Math.PI / 2, -0.022, 0.429]}
+        scale={0.864}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Object001004_Object001_mtl_0.geometry}
+        material={materials.Object001_mtl}
+        position={[369.024, 680.058, -140.581]}
+        rotation={[-Math.PI / 2, -0.022, 0.429]}
+        scale={0.864}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Object001005_Object001_mtl_0.geometry}
+        material={materials.Object001_mtl}
+        position={[369.024, 680.058, -140.581]}
+        rotation={[-Math.PI / 2, -0.022, 0.429]}
+        scale={0.864}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Object001006_Object001_mtl_0.geometry}
+        material={materials.Object001_mtl}
+        position={[369.024, 680.058, -140.581]}
+        rotation={[-Math.PI / 2, -0.022, 0.429]}
+        scale={0.864}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Object001007_Object001_mtl_0.geometry}
+        material={materials.Object001_mtl}
+        position={[369.024, 680.058, -140.581]}
+        rotation={[-Math.PI / 2, -0.022, 0.429]}
+        scale={0.864}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Cube010_Cube024_M4_0.geometry}
+        material={materials.material}
+        position={[590.185, 677.153, -995.55]}
+        rotation={[3.126, -1.494, 3.126]}
+        scale={100}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Cube009_Cube004_M3_0.geometry}
+        material={materials.material_5}
+        position={[590.185, 670.893, -995.55]}
+        rotation={[Math.PI, -1.494, Math.PI]}
+        scale={100}
       />
     </a.group>
   );
